@@ -170,9 +170,7 @@ form:valid .login {
 }
 .gradient{
     background: linear-gradient(to right, orange, red, purple);
-    -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
     color: transparent;
     display: inline;
 }
