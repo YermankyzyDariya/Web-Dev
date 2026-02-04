@@ -109,8 +109,8 @@ hr {
     font-size: 16px;
     cursor: pointer;
     align-self: center;
-    transition: background-color 0.3s ease;
-}
+    
+} 
 
 .signup:hover {
     background-color: #338822;
@@ -132,7 +132,7 @@ hr {
     color: #8a8d91;
 }
 
-.footer-languages,
+.footer-langu,
 .footer-links {
     max-width: 980px;
     margin: 0 auto;
@@ -142,7 +142,7 @@ hr {
     padding: 0 20px;
 }
 
-.footer-languages {
+.footer-langu {
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 8px;
@@ -157,7 +157,7 @@ hr {
     text-decoration: underline;
 }
 
-.footer-languages span {
+.footer-langu span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
