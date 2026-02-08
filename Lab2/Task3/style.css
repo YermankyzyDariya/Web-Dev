@@ -49,6 +49,7 @@ h1.title {
 }
 .addon-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin-top: 12px;
 }
