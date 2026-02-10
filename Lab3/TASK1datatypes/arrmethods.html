@@ -1,0 +1,158 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    let arr = ["I", "go", "home"];
+
+delete arr[1]; // remove "go"
+
+alert( arr[1] ); // undefined
+
+// now arr = ["I",  , "home"];
+alert( arr.length ); // 3
+
+
+let arr1 = ["I", "study", "JavaScript"];
+
+arr1.splice(1, 1); // from index 1 remove 1 element
+
+alert( arr1 ); // ["I", "JavaScript"]
+
+
+   
+let arr2 = ["I", "study", "JavaScript"];
+
+// from index 2
+// delete 0
+// then insert "complex" and "language"
+arr2.splice(2, 0, "complex", "language");
+
+alert( arr2 ); // "I", "study", "complex", "language", "JavaScript"
+
+let arr3 = [1, 2];
+
+// create an array from: arr and [3,4]
+alert( arr3.concat([3, 4]) ); // 1,2,3,4
+
+// create an array from: arr and [3,4] and [5,6]
+alert( arr3.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6
+
+// create an array from: arr and [3,4], then add values 5 and 6
+alert( arr3.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6
+
+
+
+
+let arr4 = [1, 0, false];
+
+alert( arr4.indexOf(0) ); // 1
+alert( arr4.indexOf(false) ); // 2
+alert( arr4.indexOf(null) ); // -1
+
+alert( arr4.includes(1) ); // true
+
+
+
+let fruits = ['Apple', 'Orange', 'Apple']
+
+alert( fruits.indexOf('Apple') ); // 0 (first Apple)
+alert( fruits.lastIndexOf('Apple') ); // 2 (last Apple)
+
+
+
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let user = users.find(item => item.id == 1);
+
+alert(user.name); // John
+
+let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+alert(lengths); // 5,7,6
+
+
+let arr5 = [ 1, 2, 15 ];
+
+// the method reorders the content of arr
+arr5.sort();
+
+alert( arr5 );  // 1, 15, 2
+
+function compareNumeric(a, b) {
+  if (a > b) return 1;
+  if (a == b) return 0;
+  if (a < b) return -1;
+}
+
+let arr6 = [ 1, 2, 15 ];
+
+arr6.sort(compareNumeric);
+
+alert(arr6);  // 1, 2, 15
+
+
+let arr7 = [1, 2, 3, 4, 5];
+arr7.reverse();
+
+alert( arr7 ); // 5,4,3,2,1
+
+let arr8 = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+let str = arr8.join(';'); // glue the array into a string using ;
+
+alert( str ); // Bilbo;Gandalf;Nazgul
+
+
+arr.find(func, thisArg);
+arr.filter(func, thisArg);
+arr.map(func, thisArg);
+// ...
+// thisArg is the optional last argument
+
+
+
+let army = {
+  minAge: 18,
+  maxAge: 27,
+  canJoin(user) {
+    return user.age >= this.minAge && user.age < this.maxAge;
+  }
+};
+
+let users1 = [
+  {age: 16},
+  {age: 20},
+  {age: 23},
+  {age: 30}
+];
+
+// find users, for who army.canJoin returns true
+let soldiers = users1.filter(army.canJoin, army);
+
+alert(soldiers.length); // 2
+alert(soldiers[0].age); // 20
+alert(soldiers[1].age); // 23
+
+
+
+
+
+
+
+
+
+   
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    let user;
+    alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+
+    let u = "John";
+    alert(u?? "Anonymous"); // John (user is not null/undefined)
+
+    let firstName = null;
+let lastName = null;
+let nickName = "Supercoder";
+
+// shows the first truthy value:
+alert(firstName || lastName || nickName || "Anonymous"); 
+
+   
+
+
+   
+  </script>
+
+
+</body>
+
+</html>

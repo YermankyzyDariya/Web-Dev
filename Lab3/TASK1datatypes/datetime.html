@@ -1,0 +1,102 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    // 0 means 01.01.1970 UTC+0
+let Jan01_1970 = new Date(0);
+alert( Jan01_1970 );
+
+// now add 24 hours, get 02.01.1970 UTC+0
+let Jan02_1970 = new Date(24 * 3600 * 1000);
+alert( Jan02_1970 );
+
+
+// current date
+let date = new Date();
+
+// the hour in your current time zone
+alert( date.getHours() );
+
+// the hour in UTC+0 time zone (London time without daylight savings)
+alert( date.getUTCHours() );
+
+
+let today = new Date();
+
+today.setHours(0);
+alert(today); // still today, but the hour is changed to 0
+
+today.setHours(0, 0, 0, 0);
+alert(today); // still today, now 00:00:00 sharp.
+
+let date1 = new Date(2016, 1, 28);
+date1.setDate(date1.getDate() + 2);
+
+alert( date1 ); // 1 Mar 2016
+
+
+
+let start = new Date(); // start measuring time
+
+// do the job
+for (let i = 0; i < 100000; i++) {
+  let doSomething = i * i * i;
+}
+
+let end = new Date(); // end measuring time
+
+alert( `The loop took ${end - start} ms` );
+
+
+let start1 = Date.now(); // milliseconds count from 1 Jan 1970
+
+// do the job
+for (let i = 0; i < 100000; i++) {
+  let doSomething = i * i * i;
+}
+
+let end2 = Date.now(); // done
+
+alert( `The loop took ${end2 - start1} ms` ); // subtract numbers, not dates
+
+function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}
+
+function bench(f) {
+  let date1 = new Date(0);
+  let date2 = new Date();
+
+  let start = Date.now();
+  for (let i = 0; i < 100000; i++) f(date1, date2);
+  return Date.now() - start;
+}
+
+alert( 'Time of diffSubtract: ' + bench(diffSubtract) + 'ms' );
+alert( 'Time of diffGetTime: ' + bench(diffGetTime) + 'ms' );
+
+
+let date3 = new Date( Date.parse('2012-01-26T13:51:50.417-07:00') );
+
+alert(date3);
+
+
+
+
+
+   
+  </script>
+
+
+</body>
+
+</html>

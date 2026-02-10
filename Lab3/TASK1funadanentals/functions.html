@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    function showMessage() {
+  alert( 'Hello everyone!' );
+}
+
+
+showMessage();
+showMessage();
+
+
+let userName = 'John';
+
+function showMessage() {
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+showMessage(); // Hello, John
+
+
+let user = 'John';
+
+function showMessage() {
+  user = "Bob"; // (1) changed the outer variable
+
+  let message = 'Hello, ' + user;
+  alert(message);
+}
+
+alert( user ); // John before the function call
+
+showMessage();
+
+alert( user ); // Bob, the value was modified by the function
+    
+
+
+function showMessage(from, text) { // parameters: from, text
+  alert(from + ': ' + text);
+}
+
+showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+
+
+
+function showMessage(from, text = "no text given") {
+  alert( from + ": " + text );
+}
+
+showMessage("Ann"); // Ann: no text given
+
+
+
+
+function checkAge(age) {
+  if (age >= 18) {
+    return true;
+  } else {
+    return confirm('Do you have permission from your parents?');
+  }
+}
+
+let age = prompt('How old are you?', 18);
+
+if ( checkAge(age) ) {
+  alert( 'Access granted' );
+} else {
+  alert( 'Access denied' );
+}
+
+
+   
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    let user = { name: "John" };
+    let admin = user; // copy the reference
+
+    let u = { name: 'John' };
+    let a = u;
+    a.name = 'Pete'; // changed by the "admin" reference
+    alert(u.name); // 'Pete', changes are seen from the "user" reference
+
+  </script>
+
+  <script>
+    let us = {
+  name: "John",
+  age: 30
+};
+
+let clone = {}; // the new empty object
+
+// let's copy all user properties into it
+for (let key in us) {
+  clone[key] = us[key];
+}
+
+// now clone is a fully independent object with the same content
+clone.name = "Pete"; // changed the data in it
+
+alert( us.name ); // still John in the original object
+
+
+
+let use = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(use, permissions1, permissions2);
+
+// now user = { name: "John", canView: true, canEdit: true }
+alert(use.name); // John
+alert(use.canView); // true
+alert(use.canEdit); // true
+
+  </script>
+
+
+</body>
+
+</html>

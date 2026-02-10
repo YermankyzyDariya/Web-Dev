@@ -1,0 +1,97 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    let arr1 = new Array();
+    let arr = [];
+
+    let fruits = ["Apple", "Orange", "Plum"];
+
+alert( fruits[0] ); // Apple
+alert( fruits[1] ); // Orange
+alert( fruits[2] ); // Plum
+
+
+let arr2 = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+// get the object at index 1 and then show its name
+alert( arr2[1].name ); // John
+
+// get the function at index 3 and run it
+arr2[3](); // hello
+
+
+
+let fruits1 = ["Apple", "Orange", "Pear"];
+
+alert( fruits1.pop() ); // remove "Pear" and alert it
+
+alert( fruits1 ); // Apple, Orange
+
+
+let fruits3 = ["Apple", "Orange"];
+
+fruits3.push("Pear");
+
+alert( fruits3 ); // Apple, Orange, Pear
+
+
+let fruits2 = ["Apple", "Orange", "Pear"];
+
+alert( fruits2.shift() ); // remove Apple and alert it
+
+alert( fruits2 ); // Orange, Pear
+
+
+let fruits4 = ["Orange", "Pear"];
+
+fruits4.unshift('Apple');
+
+alert( fruits4 ); // Apple, Orange, Pear
+
+
+let fruits0 = ["Banana"]
+
+let arr4 = fruits; // copy by reference (two variables reference the same array)
+
+alert( arr4 === fruits0 ); // true
+
+arr.push("Pear"); // modify the array by reference
+
+alert( fruits0 ); // Banana, Pear - 2 items now
+
+
+let fruits5 = [];
+fruits5[123] = "Apple";
+
+alert( fruits5.length ); // 124
+
+
+
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+alert( matrix[0][1] ); // 2, the second value of the first inner array
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

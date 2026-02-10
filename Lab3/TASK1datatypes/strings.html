@@ -1,0 +1,93 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+
+  <script>
+    let single = 'single-quoted';
+let double = "double-quoted";
+
+let backticks = `backticks`;
+
+
+alert( `The backslash: \\` ); // The backslash: \
+
+alert( 'I\'m the Walrus!' ); // I'm the Walrus!
+
+let str = `Hello`;
+
+// the first character
+alert( str[0] ); // H
+alert( str.at(0) ); // H
+
+// the last character
+alert( str[str.length - 1] ); // o
+alert( str.at(-1) );
+
+
+alert( 'Interface'.toUpperCase() ); // INTERFACE
+alert( 'Interface'.toLowerCase() ); // interface
+
+let st = 'Widget with id';
+
+alert( st.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+alert( st.indexOf('widget') ); // -1, not found, the search is case-sensitive
+
+alert( st.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+
+
+
+let str1 = 'As sly as a fox, as strong as an ox';
+
+let target = 'as'; // let's look for it
+
+let pos = 0;
+while (true) {
+  let foundPos = str1.indexOf(target, pos);
+  if (foundPos == -1) break;
+
+  alert( `Found at ${foundPos}` );
+  pos = foundPos + 1; // continue the search from the next position
+}
+
+
+alert( "Widget".includes("id") ); // true
+alert( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"
+
+
+let str2 = "stringify";
+
+// these are same for substring
+alert( str2.substring(2, 6) ); // "ring"
+alert( str2.substring(6, 2) ); // "ring"
+
+// ...but not for slice:
+alert( str2.slice(2, 6) ); // "ring" (the same)
+alert( str2.slice(6, 2) ); // "" (an empty string)
+
+
+
+// different case letters have different codes
+alert( "Z".codePointAt(0) ); // 90
+alert( "z".codePointAt(0) ); // 122
+alert( "z".codePointAt(0).toString(16) ); // 7a (if we need a hexadecimal value)
+
+
+
+
+
+
+
+
+
+
+   
+  </script>
+
+
+</body>
+
+</html>
