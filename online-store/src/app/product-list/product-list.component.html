@@ -1,0 +1,24 @@
+<div class="products-grid">
+    <div class="card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{product.name}}" class="product-image" />
+  
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p class="price">{{ product.price | number }} KZT</p>
+  
+      <div class="rating">
+        <ng-container *ngFor="let star of [1,2,3,4,5]">
+          <span [class.filled]="star <= roundRating(product.rating)">⭐</span>
+        </ng-container>
+        <span class="numeric">{{ product.rating }}</span>
+      </div>
+  
+      <a [href]="product.link" target="_blank" class="kaspi-link">Перейти на Kaspi</a>
+  
+      <div class="share-buttons">
+        <a [href]="getWhatsAppLink(product)" target="_blank" class="share-btn whatsapp">WhatsApp</a>
+        <a [href]="getTelegramLink(product)" target="_blank" class="share-btn telegram">Telegram</a>
+      </div>
+    </div>
+  </div>
+  
