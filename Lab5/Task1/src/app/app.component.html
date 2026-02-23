@@ -1,0 +1,27 @@
+<h1>Categories</h1>
+
+<div *ngFor="let category of categories">
+  <h2>{{ category.name }}</h2>
+
+  <div *ngFor="let product of getProductsByCategory(category.id)" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; display: flex; gap: 10px; align-items: center;">
+    
+   
+    <img [src]="product.image" alt="{{ product.name }}" width="120" height="120" *ngIf="product.image; else noImage">
+
+    <ng-template #noImage>
+      <div style="width: 120px; height: 120px; background: #eee; display:flex; align-items:center; justify-content:center;">
+        No Image
+      </div>
+    </ng-template>
+
+    
+    <div>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Price: {{ product.price }} KZT</p>
+      <p>Likes: {{ product.likes }}</p>
+      <a [href]="product.link" target="_blank">Buy</a>
+      <button (click)="likeProduct(product)">Like 👍</button>
+    </div>
+  </div>
+</div>

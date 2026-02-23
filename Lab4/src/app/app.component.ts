@@ -15,7 +15,7 @@ import {ReversePipe} from './reverse.js';
 
 @Component({
   selector: 'app-root',
-  template: ` Hello Universe  {{ city }}, {{ 1 + 1 }}  
+  template: ` Hello Universe 
   Username: {{ username }}`,
   styles: `
     :host {
@@ -40,7 +40,6 @@ export class User {
   selector: 'app-root',
   template: `
     <section>
-      <app-user />
     </section>
   `,
   imports: [User],

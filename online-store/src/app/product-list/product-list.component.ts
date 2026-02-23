@@ -16,7 +16,7 @@ export class ProductListComponent {
       name: 'iPhone 17',
       description: 'Современный смартфон Apple с отличной камерой.',
       price: 500000,
-      rating: 4.7,
+      rating: 3.3,
       image: 'https://resources.cdn-kaspi.kz/img/m/p/p18/p96/64168413.png?format=gallery-large',
       images: [
         'https://resources.cdn-kaspi.kz/img/m/p/p29/p1e/64464409.jpg?format=gallery-large',
@@ -179,6 +179,7 @@ export class ProductListComponent {
 
   roundRating(rating: number): number {
     return Math.round(rating);
+
   }
 
   getWhatsAppLink(product: Product): string {

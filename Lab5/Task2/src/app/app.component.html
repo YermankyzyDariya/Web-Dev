@@ -1,0 +1,20 @@
+<h1>My Store</h1>
+
+<div style="display:flex; gap:10px; margin-bottom:20px;">
+  <button *ngFor="let cat of categories"
+          (click)="selectCategory(cat)">
+    {{ cat.name }}
+  </button>
+</div>
+
+<div *ngIf="!selectedCategory">
+  <p>Welcome! Please select a category.</p>
+</div>
+
+<div *ngIf="selectedCategory">
+  <h2>{{ selectedCategory.name }}</h2>
+  <app-product-list 
+    [products]="productsInSelectedCategory"
+    (deleteProduct)="removeProduct($event)">
+  </app-product-list>
+</div>
