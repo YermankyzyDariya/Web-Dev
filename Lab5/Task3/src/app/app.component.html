@@ -1,6 +1,6 @@
 <h1>My Store</h1>
 
-<!-- Кнопки категорий -->
+
 <div style="display:flex; gap:10px; margin-bottom:20px;">
   <button *ngFor="let cat of categories"
           (click)="selectCategory(cat)"
@@ -9,12 +9,11 @@
   </button>
 </div>
 
-<!-- Приветствие, если категория не выбрана -->
 <div *ngIf="!selectedCategory">
   <p>Welcome! Please select a category.</p>
 </div>
 
-<!-- Список продуктов выбранной категории -->
+
 <div *ngIf="selectedCategory">
   <h2>{{ selectedCategory.name }}</h2>
   <app-product-list 

@@ -25,7 +25,7 @@ export class ProductListComponent {
   @Output() deleteProduct = new EventEmitter<Product>();
 
   onDelete(product: Product) {
-    if (confirm(`Are you sure you want to delete "${product.name}"?`)) { // подтверждение
+    if (confirm(`Are you sure you want to delete "${product.name}"?`)) { 
       this.deleteProduct.emit(product);
     }
   }

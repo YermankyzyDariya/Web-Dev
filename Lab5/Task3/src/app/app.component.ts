@@ -19,17 +19,16 @@ export class AppComponent {
   productsInSelectedCategory: Product[] = [];
 
   constructor(private productService: ProductService) {
-    // Загружаем категории из сервиса
+   
     this.categories = this.productService.getCategories();
   }
 
-  // Выбираем категорию
+  
   selectCategory(cat: Category) {
     this.selectedCategory = cat;
     this.productsInSelectedCategory = this.productService.getProductsByCategory(cat.id);
   }
 
-  // Удаляем продукт из списка
   removeProduct(product: Product) {
     this.productsInSelectedCategory = this.productsInSelectedCategory.filter(p => p.id !== product.id);
   }

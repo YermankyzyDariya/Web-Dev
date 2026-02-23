@@ -35,7 +35,7 @@ export class ProductItemComponent {
   @Input() product!: Product;
   @Output() delete = new EventEmitter<Product>();
 
-  // метод для Like
+  
   like() {
     this.product.likes++;
   }
@@ -44,7 +44,7 @@ export class ProductItemComponent {
     this.delete.emit(this.product);
   }
 
-  // метод для безопасного encodeURIComponent
+ 
   encodeUrl(url: string): string {
     return encodeURIComponent(url);
   }
