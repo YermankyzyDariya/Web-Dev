@@ -20,7 +20,7 @@ import { Product } from '../../models/product.model';
         <p>{{ product.description }}</p>
         <p>Price: {{ product.price }} KZT</p>
 
-        <!-- Like счетчик с сердцем -->
+       
         <p style="color:red; cursor:pointer;" (click)="like()">❤ {{ product.likes }}</p>
 
         <button (click)="deleteProductItem()">Delete 🗑️</button>
