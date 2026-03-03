@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
+
 import { AlbumService } from './album.service';
 import { Photo } from '../../models/photo.model';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+
 @Component({
+  selector: 'app-album-photos',
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './album-photo.component.html'
 })
 export class AlbumPhotosComponent implements OnInit {
 
-  photos: Photo[] = [];
+  photos$!: Observable<Photo[]>;
+  albumId!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,10 +23,7 @@ export class AlbumPhotosComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-
-    this.albumService.getAlbumPhotos(id).subscribe(data => {
-      this.photos = data;
-    });
+    this.albumId = Number(this.route.snapshot.paramMap.get('id'));
+    this.photos$ = this.albumService.getAlbumPhotos(this.albumId);
   }
 }

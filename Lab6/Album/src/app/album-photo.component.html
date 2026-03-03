@@ -1,10 +1,21 @@
-<h2>Photos</h2>
+<h2>Album Photos</h2>
 
-<div class="grid">
-  <div *ngFor="let photo of photos">
-    <img [src]="photo.thumbnailUrl">
-    <p>{{ photo.title }}</p>
+<div *ngIf="photos$ | async as photos; else loading">
+
+  <div class="grid">
+
+    <div *ngFor="let photo of photos">
+      <img [src]="'https://picsum.photos/200?random=' + photo.id" [alt]="photo.title">
+      <p>{{ photo.title }}</p>
+    </div>
+
   </div>
+
+  <br>
+  <button [routerLink]="['/albums', albumId]">Back</button>
+
 </div>
 
-<button routerLink="../">Back</button>
+<ng-template #loading>
+  <p>Loading photos...</p>
+</ng-template>
