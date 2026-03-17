@@ -1,0 +1,12 @@
+<h1> Name: {{name}}</h1>
+
+<img [src] = "imageUrl" alt = "image">
+
+<button (click) = "clickCounter()">Click Like</button>
+
+<input [(ngModel)] = "hobby" placeholder="type">
+<p>Hobby: {{hobby}}</p>
+
+@if(counter >= 10){
+    <p>Wow you are really good</p>
+}

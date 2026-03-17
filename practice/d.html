@@ -1,0 +1,10 @@
+<ul>
+    @for(stud of students ; track stud.id){
+        <li> {{stud.name}} - {{stud.grade}}
+
+        @if(stud.grade > 90){
+            <P> Excellent! </P>
+        }
+    </li>
+    }
+</ul>

@@ -1,0 +1,8 @@
+<h1> Counter: {{counter}}</h1>
+
+<button (click) = "increament()">+</button>
+<button (click) = "decreement()"> - </button>
+
+@if(counter < 0){
+    <p> Conter below 0! </p>
+}
